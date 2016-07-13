@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mock Google Clone</title>
+	<style type="text/css" media="screen">
+		body {
+			font-family: Arial,sans-serif;
+			padding: 0;
+			margin: 0;
+		}
+		
+		ul {
+			/* Wanted to get rid of the pesky bullets */
+			list-style: none;
+			/* lets me see my floating children */
+			overflow: hidden;
+			font-size: 13px;
+			
+		}
+
+		a {
+			text-decoration: none;
+			color: #333;
+		}
+
+		div.top-menu {
+			/* Place nav in div to contain so I can float the nav to the right*/
+			float: right;
+		}
+
+		.menu-item {
+			/* items inside nav will read out properly, and not backwards */
+			float: left;
+		}
+		/* My bigger icon on top nav bar */
+		div.big {
+			height: 34px;
+			width: 34px;
+			border-radius: 17px;
+			background-color:#333;
+			margin: 0px 10px;
+		}
+		/* my smaller item in top nav bar */
+		div.small {
+			height: 22px;
+			width: 22px;
+			border-radius: 11px;
+			background-color: #333;
+			margin: 5px 10px;
+		}
+
+		li.header.link {
+			/* helps align everything to look centered */
+			padding: 5px 10px;
+		}
+
+		li.header.link:hover {
+			/* Emphasis on what is shovered on */
+			text-decoration: underline;
+			cursor: pointer;
+		}
+
+		div.big, div.small .link {
+			/* gives a great effect to emphasize hovering over the icons */
+			-webkit-filter: brightness(100%);
+		}
+
+		div.big:hover, div.small:hover .link:hover {
+			/* makes the items darker when hovered */
+			-webkit-filter: brightness(40%);
+			cursor: pointer;
+		}
+
+		.pic1:hover {
+			cursor: pointer;
+		}
+
+		.logo {
+			width: 50%;
+			margin: auto;
+			text-align: center;
+			padding-top: 129px;
+		}
+
+		div.search {
+			display: block;
+			margin: auto;
+			height: 38px;
+			width: 584px;
+			border: 1px solid #d9d9d9;
+		}
+
+		div.search > input {
+			position: absolute;
+			border: none;
+			height: 38px;
+			width: 566px;
+			padding: 0px 9px 0px 9px;
+		}
+
+		.mic {
+			position: relative;
+			top: 4px;
+			left: 552px;
+			height: 32px;
+			width: 32px;
+		}
+
+		ul.left {
+			/* sends this portion of the footer nav to the left */
+			overflow: hidden;
+			float: left;
+			left: 0px;
+
+		}
+
+		ul.right {
+			/* sends this portion of footer nav to the right */
+			overflow: hidden;
+			float: right;
+			right: 0px;
+		}
+
+		.footer:hover {
+			text-decoration: underline;
+		}
+		
+		/* my bottom nav */
+		footer {
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			position: absolute;
+			height: 40px;
+			width: 100%;
+			border-top: 1px solid #e4e4e4;
+			background-color: #f2f2f2;
+
+		}
+		
+		footer > ul > li {
+			/* shifts my items to the right just a bit */
+			padding: 0px 27px 0px 0px;
+		}
+
+		div.balancing {
+			/* due to positioning of img and input...this gives a nice cushion between them */
+			padding-top: 30px;
+		}
+		
+		/* general layout of buttons */
+		.button {
+			/* box-sizing: border-box; */
+			height: 18px;
+			background-color: #f2f2f2;
+			padding: 8px 16px;
+			border-radius: 2px;
+			font-weight: bold;
+			font-size: 13px;
+			font-family: arial,sans-serif;
+			text-align: center;
+			/* let's make them sit next to each other */
+			display: inline-block;
+			color: #757575;
+
+		}
+
+		.button:hover {
+			background-color: #f8f8f8;
+			border: 1px solid #c6c6c6;
+		}
+
+		.button-search {
+			width: 91.75px;
+			border: 1px solid #f2f2f2;
+			margin: 11px 4px;
+
+		}
+
+		.button-lucky{
+			width: 108.578px;
+			/* padding: 0px 16px; */
+			border: 1px solid #f2f2f2f2;
+			margin: 11px 4px;
+		}
+
+		input.bigger {
+			height: auto;
+			width: auto;
+			background-color: #f2f2f2;
+		}
+
+		div.internal {
+			box-sizing: border-box;
+		}
+		
+	</style>
+
+</head>
+<body>
+
+	<div class="top-menu">
+		<ul>
+			<li class="menu-item header link"><a href="https://accounts.google.com/SignOutOptions?hl=en&continue=https://www.google.com/">Gmail</a></li>
+			<li class="menu-item header link"><a href="https://www.google.com/imghp?hl=en&tab=wi&authurser=0&ei=gB2GV_KDHMGzmwHf-qKQCg&ved=0EKouCBcoAQ">Images</a></li>
+			<!-- With this image, margin-right will help align image to look right -->
+			<li class="menu-item header pic1"><a href="https://www.google.com/intl/en/options/"><img style="margin-right: 10px" src="Screen Shot 2016-07-12 at 3.43.15 PM.png"></a></li>
+			<li class="menu-item header"><div class="small"></div></li>
+			<li class="menu-item header"><div class="big"></div></li>
+		</ul>
+	</div>
+
+	<div class="logo">
+		<img height="92" width="272" src="googlelogo_color_272x92dp.png">
+	</div>
+
+	<div class="balancing">
+		<div class="search">
+			<input type="text" name="search">
+			<img class="mic" src="Screen Shot 2016-07-12 at 3.42.10 PM.png">
+		</div>
+	</div>
+
+	<center class="holder">
+		<div class="button-search button">
+			<div class="internal">Google Search</div><!-- <input class="bigger" value="Google Search" type="submit" name="search"> -->
+		</div>
+		<div class="button-lucky button">
+			<div class="internal">I'm Feeling Lucky</div><!-- <input class="bigger" value="I'm Feeling Lucky" type="submit" name="lucky"> -->	
+		</div>
+	</center>
+
+	<footer>
+		<ul class="footer left">
+			<li class="menu-item footer"><a href="https://www.google.com/intl/en/ads/?fg=1"">About</a></li>
+			<li class="menu-item footer"><a href="https://www.google.com/services/?fg=1">Business<a></li>
+			<li class="menu-item footer"><a href="https://www.google.com/intl/en/about.html?fg=1">Advertising</a></li>
+		</ul>
+		<ul class="footer right">
+			<li class="menu-item footer"><a href="https://www.google.com/preferences?hl=en">Settings</a></li>
+			<li class="menu-item footer"><a href="https://www.google.com/intl/en/policies/terms/?fg=1">Terms</a></li>
+			<li class="menu-item footer"><a href="https://www.google.com/intl/en/policies/privacy/?fg=1">Privacy</a></li>
+		</ul>
+	</footer>
+
+</body>
+</html>
